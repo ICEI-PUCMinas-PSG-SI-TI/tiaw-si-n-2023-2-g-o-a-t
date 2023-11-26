@@ -1,0 +1,36 @@
+/* Configurações gerais */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: #14805E;
+}
+
+.entrar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.text-center p {
+    color: white;
+}
+
+/* Conteúdo */
+
+
+/* Footer */
+footer {
+    background-color: #14805E;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
