@@ -1,17 +1,22 @@
-# Nome do projeto
-Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
+# Projeto GOAT
+
+
+O objetivo geral deste projeto é simplificar e promover a realização de partidas de futebol casual, conectando entusiastas esportivos e fornecendo informações atualizadas sobre locais disponíveis para jogos. Nossa meta primordial é criar uma plataforma abrangente que torne mais acessível para as pessoas a busca por partidas de futebol informais em sua região e a participação nelas. Em resumo, buscamos desenvolver uma solução digital que facilite a organização e a adesão a partidas de futebol casual, proporcionando uma experiência mais satisfatória e inclusiva para todos os interessados.
+
+Nossos objetivos específicos detalham as etapas necessárias para alcançar essa meta geral de forma eficiente e eficaz. Eles incluem a implementação de recursos como localização de partidas, registro de jogadores, notificações em tempo real e avaliações, todos destinados a melhorar a experiência dos usuários e garantir que encontrar e participar de partidas de futebol casual seja uma tarefa simples e agradável.
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Nayarisson Natãn Oliveira Moroni
+* Paulo Henrique Almeida Ferreira
+* Antônio José Estevam de Jesus
+* João Guilherme Machado
+* Gabriel Jordan de Souza Santos
+* Alex Angelo Pereira Duarte 
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Pedro Felipe Alvez de Oliveira
 
 ## Instruções de utilização
 
