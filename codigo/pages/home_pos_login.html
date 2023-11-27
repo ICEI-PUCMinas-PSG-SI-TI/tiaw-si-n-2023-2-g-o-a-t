@@ -51,13 +51,23 @@
   </div>
   <!-- Conteúdo do site aqui -->
 
+    <!-- Área de pesquisa do site -->
+  <div class="input-group mb-3" style="width: 25%; margin: 2% 65%;"> 
+    <input type="text" class="form-control" placeholder="Digite o bairro" 
+      aria-label="Recipient's username" aria-describedby="button-addon2"> 
+    <button class="btn btn-dark" type="button" id="button-addon2"> 
+      <i class="fa-solid fa-magnifying-glass fa-lg"></i> 
+    </button>  
+  </div>
+
+  <!-- Fim da área de pesquisa do site -->
+
   <!-- Cards de partidas -->
 
   <!-- Card 1 -->
-  <div class="row g-0">
-    <div class="card-participar col-sm-12 col-md-4 col-lg-3 ">
-      <div class="card" style="width: 18rem;">
-        <div class="bg-success p-2 text-white text-center bg-opacity-75">Quadra 2</div>
+  <div class="row g-0" id="linha-cards">
+    <div class="card-participar col-sm-6 col-md-4 col-lg-3 ">
+      <div class="card">
         <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column">
           <p class="card-title">Criado por: Alex</p>
@@ -71,9 +81,8 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="card-participar col-sm-12 col-md-4 col-lg-3 ">
-      <div class="card" style="width: 18rem;">
-        <div class="bg-success p-2 text-white text-center bg-opacity-75">Quadra 2</div>
+    <div class="card-participar col-sm-6 col-md-4 col-lg-3 ">
+      <div class="card">
         <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column">
           <p class="card-title">Criado por: Alex</p>
@@ -87,9 +96,8 @@
     </div>
 
     <!--Card 3 -->
-    <div class="card-participar col-sm-12 col-md-4 col-lg-3 ">
-      <div class="card" style="width: 18rem;">
-        <div class="bg-success p-2 text-white text-center bg-opacity-75">Quadra 3</div>
+    <div class="card-participar col-sm-6 col-md-4 col-lg-3 ">
+      <div class="card">
         <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column">
           <p class="card-title">Criado por: Alex</p>
@@ -103,9 +111,8 @@
     </div>
 
     <!-- Card 4-->
-    <div class="card-participar col-sm-12 col-md-4 col-lg-3 ">
-      <div class="card" style="width: 18rem;">
-        <div class="bg-success p-2 text-white text-center bg-opacity-75">Quadra 4</div>
+    <div class="card-participar col-sm-6 col-md-4 col-lg-3 ">
+      <div class="card">
         <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column">
           <p class="card-title">Criado por: Alex</p>
@@ -119,9 +126,8 @@
     </div>
 
     <!-- Card 5-->
-    <div class="card-participar col-sm-12 col-md-4 col-lg-3 ">
-      <div class="card" style="width: 18rem;">
-        <div class="bg-success p-2 text-white text-center bg-opacity-75">Quadra 5</div>
+    <div class="card-participar col-sm-6 col-md-4 col-lg-3 ">
+      <div class="card">
         <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column">
           <p class="card-title">Criado por: Alex</p>
@@ -135,9 +141,8 @@
     </div>
 
     <!-- Card 6 -->
-    <div class="card-participar col-sm-12 col-md-4 col-lg-3 ">
-      <div class="card" style="width: 18rem;">
-        <div class="bg-success p-2 text-white text-center bg-opacity-75">Quadra 6</div>
+    <div class="card-participar col-sm-6 col-md-4 col-lg-3 ">
+      <div class="card">
         <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column">
           <p class="card-title">Criado por: Alex</p>
@@ -151,9 +156,8 @@
     </div>
 
     <!-- Card 7 -->
-    <div class="card-participar col-sm-12 col-md-4 col-lg-3 ">
-      <div class="card" style="width: 18rem;">
-        <div class="bg-success p-2 text-white text-center bg-opacity-75">Quadra 7</div>
+    <div class="card-participar col-sm-6 col-md-4 col-lg-3 ">
+      <div class="card">
         <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column">
           <p class="card-title">Criado por: Alex</p>
@@ -167,9 +171,8 @@
     </div>
 
     <!-- Card 8 -->
-    <div class="card-participar col-sm-12 col-md-4 col-lg-3 ">
-      <div class="card" style="width: 18rem;">
-        <div class="bg-success p-2 text-white text-center bg-opacity-75">Quadra 8</div>
+    <div class="card-participar col-sm-6 col-md-4 col-lg-3 ">
+      <div class="card">
         <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="...">
         <div class="card-body d-flex flex-column">
           <p class="card-title">Criado por: Alex</p>
@@ -188,7 +191,7 @@
   <!-- PopUp de participar -->
   <div id="separa-modal">
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -216,12 +219,14 @@
       </div>
 
     </div>
+
     <!-- Fim PopUp de participar -->
 
     <!-- Inicio da mensagem de participando -->
         
         <div id="liveAlertPlaceholder">
-          <div></div>
+          <div>
+          </div>
         </div>
 
     <!-- Fim da mensagem de participando -->
@@ -230,7 +235,7 @@
 
       <!-- Início do faq de perguntas frequentes -->
     <footer class="text-center">
-      
+
       <div class="bloco-faq">
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="accordion-item">
