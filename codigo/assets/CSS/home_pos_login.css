@@ -12,25 +12,25 @@ body {
     background-repeat: no-repeat;
     */
 }
-.background-image {
-  position: relative;
-}
 
 /* Navbar */
 .container-fluid
 {
     width: 100%;
 }
-
+.container .navbar-brand > img{
+    width: 57px;
+}
 .navbar{
     background-color: #14805E;
 }
-.icone-profile{
+.profile{
     color: #fff;
     text-decoration: none;
+    align-items: end;
 }
-.inicio-profile{
-    padding-right: 1%;
+.collapse #profile-icone{
+    align-items: flex-end;
 }
 .text-center p
 {
@@ -40,14 +40,13 @@ body {
 
 /* Conteúdo */
 #linha-cards{
-    margin-left: 1%;
-    margin-right: 1%;
+    margin: 2% 1% 2% 1%;   
     padding-left: 12%;
     padding-right: 12%;
-    margin-top: 2%; 
+   
 }
 .card{
-    margin: 0 5% 5% 5%;   
+    margin: 0 5% 6% 5%;   
     
 }
 .card-body .botao-mais
@@ -88,6 +87,7 @@ div .modal-header h1
     top: 0;
     width: 100%;
     margin-top: 1.8%;
+    z-index: 2;
 }
 
 /* Configurando o alerta*/

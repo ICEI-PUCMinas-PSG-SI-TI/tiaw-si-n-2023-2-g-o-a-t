@@ -1,3 +1,24 @@
+/************************* Recuperando os dados das partidas *************************/
+const urlPartidas =
+  "https://jsonserver-partidas.nayarissonnatan.repl.co/partidas";
+var partidas = [];
+
+function LeDadosJSONServer() {
+  fetch(urlPartidas)
+    .then(function (response) {
+      return response.json();
+    })
+    .then((data) => {
+      partidas = data;
+      console.log("dados carregados!" + partidas[1].Criador);
+    });
+}
+
+//.then (function(dados) {
+//
+//
+//})
+
 /************************* Programando a abertura do pop-up para cada partida *************************/
 
 var openPopupButtons = document.getElementsByClassName("openPopupButton");
@@ -9,16 +30,9 @@ Array.from(openPopupButtons).forEach(function (button) {
     // Obtém o id do elemento clicado
     elementId = button.id;
 
-    // Abre o popup
-    //customPopup.style.display = "block";
-
     ValidaInfo();
   });
 });
-
-//closePopupButton.addEventListener("click", function () {
-//customPopup.style.display = "none";
-//});
 
 // Obtendo referências para os parágrafos
 var pCriador = document.getElementById("p-criador");
@@ -29,8 +43,7 @@ var pJogadores = document.getElementById("p-jogadores");
 var pCategoria = document.getElementById("p-categoria");
 var pObrigatorio = document.getElementById("p-obrigatorio");
 
-//Dados das partidas
-var dados = [
+/* var dados = [
   {
     id: 0,
     Criador: "Alex Justos",
@@ -117,22 +130,32 @@ var dados = [
   },
 ];
 
+*/
+
 //função que busca nos dados estruturados a respectiva partida que o usuário deseja
 function ValidaInfo() {
-  let procura = dados.length;
+  let procura = partidas.length;
   for (let i = 0; i < procura; i++) {
-    if (dados[i].id == elementId) {
-      pCriador.textContent = "Criador: " + dados[i].Criador;
-      pEsporte.textContent = "Esporte: " + dados[i].Esporte;
-      pData.textContent = "Data: " + dados[i].Data;
-      pHorario.textContent = "Horário: " + dados[i].Horário;
-      pJogadores.textContent = "Jogadores: " + dados[i].Jogadores;
-      pCategoria.textContent = "Categoria: " + dados[i].Categoria;
-      pObrigatorio.textContent = "Obrigatório: " + dados[i].Obrigatório;
+    if (partidas[i].id == elementId) {
+      pCriador.textContent = "Criador: " + partidas[i].Criador;
+      pEsporte.textContent = "Esporte: " + partidas[i].Esporte;
+      pData.textContent = "Data: " + partidas[i].Data;
+      pHorario.textContent = "Horário: " + partidas[i].Horário;
+      pJogadores.textContent = "Jogadores: " + partidas[i].Jogadores;
+      pCategoria.textContent = "Categoria: " + partidas[i].Categoria;
+      pObrigatorio.textContent = "Obrigatório: " + partidas[i].Obrigatório;
       procura = i;
     }
   }
 }
+
+/*********************************** Programando o botão de participar ***********************************/
+//exemplo teste: buscar o id do usuário para cadastrar ele na partida
+//Obs.: o id deve ser guardado no localstorage a partir da tela de login
+
+//fim do teste
+
+//puxa o id do usuário
 
 /*********************************** Programando a Notificação ***********************************/
 
@@ -149,7 +172,6 @@ const appendAlert = (message, type) => {
   ].join("");
 
   alertPlaceholder.append(wrapper);
-
 };
 
 /*   implementar após a junção do código do trablho
@@ -170,15 +192,16 @@ const VerificaLotacao = () => {
 const alertTrigger = document.getElementById("participar");
 const notificacao = document.getElementById("notificacao");
 // if (alertTrigger) {
-  let mensagemExito = "<strong>Legal, agora você está participando da partida!</strong>";
- // let mensagemFalha = "Ops, parece que a partida já está cheia!";
+let mensagemExito =
+  "<strong>Legal, agora você está participando da partida!</strong>";
+// let mensagemFalha = "Ops, parece que a partida já está cheia!";
 
-  alertTrigger.addEventListener("click", () => {
-    appendAlert(mensagemExito, "success");
-  });
+alertTrigger.addEventListener("click", () => {
+  appendAlert(mensagemExito, "success");
+});
 //}
 //função para fazer a mensagem desaparecer
-console.log(dados[0].Jogado[0])
+console.log(dados[0].Jogado[0]);
 /* 
 setTimeout(function () {
   notificacao.className = 'alert alert-success alert-dismissible closed.bs.alert';
