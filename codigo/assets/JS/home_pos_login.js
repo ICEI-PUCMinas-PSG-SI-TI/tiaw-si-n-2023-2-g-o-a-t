@@ -26,9 +26,8 @@ LeDadosJSONServer()
 
 async function AtualizaLotacao(id) {
   await LeDadosJSONServer()
-  let somaLotacao = partidas[id].lotacao; 
-
-  console.log(somaLotacao);
+  let somaLotacao = partidas[id].lotacao;
+  console.log(partidas[id].Horario)
 
   var altera = {
     id: id,
@@ -62,6 +61,7 @@ async function AtualizaLotacao(id) {
       .catch(error => {
           console.log('Erro ao atualizar contato via API JSONServer');
       });
+      console.log(somaLotacao)
 }
 
 /************************* Programando a abertura do pop-up para cada partida *************************/
