@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-image: url(/codigo/assets/images/GOAT.jpg);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Navbar */
+.container-fluid
+{
+    width: 100%;
+}
+
+.navbar{
+    background-color: #14805E;
+}
+.icone-profile{
+    color: #fff;
+    text-decoration: none;
+}
+.inicio-profile{
+    padding-right: 1%;
+}
+.text-center p
+{
+    color: white;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 9px 11px 14px -3px rgba(0, 0, 0, 0.72);
+    width: 300px;
+    max-height: 580px;
+    transition: 0.3s ease-out;
+  }
+  
+  .card .button-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .card .button-group a,
+  .card .button-group button {
+    width: 100%;
+    padding: 8px; /* Adicionei padding para reduzir a altura */
+    margin-bottom: 8px;
+  }
+  
+  
+  
+  
+  
+  
+  
+.h5{
+  text-align: justify;
+}
+
+.p{
+  text-align: justify;
+  font-weight: bold;
+  color:white ;
+}
+/*Estilo para a escrita minhas partidas */
+.me-5{
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+
+
+.partida-cancelada {
+  display: none;
+}
+
+
+
+.card p{
+    justify-self: auto;
+    text-align: left;
+    color: black;
+    font-size: 15px;
+}
+.quadra{
+    float: right;
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.status-partida {
+  font-weight: bold;
+  color: green; /* Cor para status "Confirmada" */
+}
+
+.partida-cancelada .status-partida {
+  color: red; /* Cor para status "Cancelada" */
+}
+
+
+
+.alt{
+    border-left: 3px solid black;
+}
+
+/* Estilos gerais para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  
+  
+  .modal-content {
+    background-color: #fff;
+  width: 80%; /* Ajuste a largura conforme necessário */
+  max-width: 500px; /* Adicione um valor máximo para evitar que o pop-up fique muito largo */
+  margin: 50px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  box-sizing: border-box;
+  }
+  
+  /* Estilos para o botão "X" de fechar o modal */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .close:hover {
+    color: #f00; /* Cor do botão "X" ao passar o mouse */
+  }
+  
+  /* Estilos para os botões do modal */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  
+  
+  button:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+  }
+  
+  /* Estilos específicos para os botões "Sim" e "Cancelar" */
+  #confirmCancel {
+    background-color: #d9534f; 
+  }
+  
+  #confirmCancel:hover {
+    background-color: #c9302c;
+  }
+  
+  #cancelCancel {
+    background-color: #5bc0de; 
+  }
+  
+  #cancelCancel:hover {
+    background-color: #46b8da;
+  }
+
+
+/* Footer */
+footer {
+    background-color: #022f21;
+    bottom: 0;
+    width: 100%;
+    margin-top: 2%;
+}
+.text-center a {
+    text-decoration: none;
+    color: inherit;
+    margin-right: 15px;
+    color: #fff;
+
+}
+.text-center p {
+    font-family: Arial, Helvetica, sans-serif,bold;
+    margin-top:10px;
+}
+.bloco-faq{
+    max-width: 50%;
+    margin: 5px auto 5px auto;
+    
+}
+.accordion-item .accordion-button,.accordion-body{
+    color: #fff;
+    background-color: #022f21;
+}

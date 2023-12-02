@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>GOAT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/codigo/assets/CSS/minhaspartidas.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="d-flex justify-content-between w-100">
+          <div>
+            <div class="container-fluid d-flex">
+              <a class="navbar-brand" href="#"><span class="fw-bold text-light ">GOAT</span></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><span class="text-light">Minhas
+                        Partidas</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="text-light">Montar Partidas</span></a>
+                  </li>
+              </div>
+            </div>
+          </div>
+          <div class="inicio-profile">
+            <div>
+              </ul>
+              <div class="profile">
+                <a href="#">
+                  <img src="/codigo/assets/images/icons8-person-24.png" class="bonequinhonavbar">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+  </div>
+  </div>
+  
+  <!-- Conteúdo do site aqui -->
+  
+  <article class="">
+      <div class="container p-4 pb-0">
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            <span class="me-5">Minhas Partidas</span>
+            </button>
+          </p>
+        </div>          
+     </article>
+
+     <!--Cards-->
+     <section class="container-fluid">
+      <div class="row">
+
+        
+    <!--Card 1-->
+<div class="card" style="width: 21rem;" data-partida-id="1">
+    <h5 class="card-title">Quadra 1</h5>
+    <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="Imagem Quadra 1">
+    <div class="card-body">
+      <p>Jogadores: 4/8</p>
+      <p>Local: R. José Cleto 972, Palmares</p>
+      <p>Horário: 19:00</p>
+      <p>Status: <span class="status-partida">Confirmada</span></p>
+      <div class="button-group">
+        <a href="#" class="btn btn-primary cancel-button" data-partida-id="1">Cancelar participação</a>
+        <button class="btn btn-warning alterar-status" data-partida-id="1">Alterar Status</button>
+        <a href="#" class="btn btn-danger cancel-button" data-partida-id="1">Cancelar Partida</a>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+        <!--Card 2-->
+        <div class="card" style="width: 21rem;" data-partida-id="2">
+            <h5 class="card-title">Quadra 2</h5>
+            <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="Imagem Quadra 2">
+            <div class="card-body">
+              <p>Jogadores: 7/8</p>
+              <p>Local: R. José Cleto 972, Palmares</p>
+              <p>Horário: 15:00</p>
+              <p>Status: <span class="status-partida">Confirmada</span></p>
+              <div class="button-group">
+                <a href="#" class="btn btn-primary cancel-button" data-partida-id="2">Cancelar participação</a>
+                <button class="btn btn-warning alterar-status" data-partida-id="2">Alterar Status</button>
+                <a href="#" class="btn btn-danger cancel-button" data-partida-id="2">Cancelar Partida</a>
+              </div>
+            </div>
+          </div>
+
+        <!--Card 3-->
+        <div class="card" style="width: 21rem;" data-partida-id="3">
+            <h5 class="card-title">Quadra 3</h5>
+            <img src="/codigo/assets/images/images (1).jpg" class="card-img-top" alt="Imagem Quadra 3">
+            <div class="card-body">
+              <p>Jogadores: 5/8</p>
+              <p>Local: R. José Cleto 972, Palmares</p>
+              <p>Horário: 17:00</p>
+              <p>Status: <span class="status-partida">Confirmada</span></p>
+              <div class="button-group">
+                <a href="#" class="btn btn-primary cancel-button" data-partida-id="3">Cancelar participação</a>
+                <button class="btn btn-warning alterar-status" data-partida-id="3">Alterar Status</button>
+                <a href="#" class="btn btn-danger cancel-button" data-partida-id="3">Cancelar Partida</a>
+              </div>
+            </div>
+          </div>
+      <div class="row">
+
+      <!--Pop-up-->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+            <p>Tem certeza de que deseja cancelar a participação?</p>
+            <button id="confirmCancel">Sim</button>
+            <button id="cancelCancel">Cancelar</button>
+          </div>
+        </div>
+        
+      <!-- Footer -->
+
+      <!-- Início do faq de perguntas frequentes -->
+    <footer class="text-center">
+      
+        <div class="bloco-faq">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Pergunta 01
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Pergunta 02
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Pergunta 03
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+          <!-- Fim do faq de perguntas frequentes -->
+  
+          <div class="text-center p-3">
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-facebook fa-xl"></i>
+            </a>
+              <a href="#" target="_blank">
+              <i class="fa-brands fa-instagram fa-xl"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-linkedin fa-xl"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-twitter fa-xl"></i>
+            </a>
+            <p><b>GOAT</b> &#169; 2023: Todos os direitos autorais estão reservardos</p>
+          </div>
+      </footer>
+      <!-- Footer of end -->
+  
+  </section>
+  <script src="https://kit.fontawesome.com/3b9470d8da.js" crossorigin="anonymous"></script>
+  <script src="/codigo/assets/JS/minhaspartidas.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+</body>
+</html>
