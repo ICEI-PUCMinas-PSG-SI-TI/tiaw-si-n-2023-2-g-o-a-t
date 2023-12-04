@@ -40,6 +40,7 @@ LeDadosUsuarios()
 
 async function AtualizaLotacao(id) {
   await LeDadosPartidas()
+  
   let somaLotacao = partidas[id].lotacao;
   console.log(partidas[id].Horario)
 
@@ -80,13 +81,18 @@ async function AtualizaLotacao(id) {
 
 //atualiza as partidas que o usuário está participando
 var atualizapartidas = [];
+var ComEspaco = false;
 
 async function AtualizaPartidasUsuario(IdUsuario, IdPartida) {
   await LeDadosUsuarios();
+
   let indice = IdUsuario - 1;
   let tamvetor = usuarios[indice].partidas.length;
   let jaParticipa = false;
 
+if(partidas[IdPartida].lotacao < partidas[IdPartida].Jogadores)
+{
+  ComEspaco = true;
   for(let i = 0; i <= tamvetor; i++){
       if(i < tamvetor){
     atualizapartidas[i] = usuarios[indice].partidas[i];
@@ -133,6 +139,10 @@ var alteraPartidas = {
       .catch(error => {
           console.log('Erro ao atualizar contato via API JSONServer');
       });
+    }
+    else{
+      ComEspaco = false;
+    }
 }
 
 /************************* Programando a abertura do pop-up para cada partida *************************/
@@ -223,11 +233,11 @@ async function ProcuraIdUsuario() {
 //código para abrir as notificações de êxito
 
 const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
-const appendAlert = (message, type) => {
+const appendAlert = (message, type, icon) => {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = [
     `<div class="alert alert-${type} alert-dismissible mb-1" role="alert" id="notificacao">`,
-    `   <div><i class="fa-sharp fa-solid fa-circle-check fa-lg me-2"></i>${message}</div>`,
+    `   <div><i class="${icon} fa-lg me-2"></i>${message}</div>`,
     '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
     "</div>",
   ].join("");
@@ -235,31 +245,26 @@ const appendAlert = (message, type) => {
   alertPlaceholder.append(wrapper);
 }
 
-/*   implementar após a junção do código do trablho
-
-const VerificaLotacao = () => {
-  let mensagemExito = "Legal, agora você está participando da partida!";
-  let mensagemFalha = "Ops, parece que a partida já está cheia!";
-  if(VerificaLotacao){
-    return mensagemExito;
-  }
-  else{
-    return mensagemFalha
-  }
-}
-*/
-
 //função para inserir a mensagem e o tipo de alerta que será exibido
 const alertTrigger = document.getElementById("participar");
 const notificacao = document.getElementById("notificacao");
-// if (alertTrigger) {
+
 let mensagemExito =
   "<strong>Legal, agora você está participando da partida!</strong>";
-// let mensagemFalha = "Ops, parece que a partida já está cheia!";
 
-alertTrigger.addEventListener("click", () => {
-  AtualizaPartidasUsuario(1, elementId)
-  AtualizaLotacao(elementId);
-  appendAlert(mensagemExito, "success");
+let mensagemFalha = "<strong>Ops, parece que a partida já está cheia!</strong>";;
+
+alertTrigger.addEventListener("click", async () => {
+  await ProcuraIdUsuario();
+  await AtualizaPartidasUsuario(NovoParticipando, elementId);
+  
+  if(ComEspaco)
+  {
+    AtualizaLotacao(elementId);
+    appendAlert(mensagemExito, "success", "fa-sharp fa-solid fa-circle-check");
+  }
+  else
+  {
+    appendAlert(mensagemFalha, "primary", "fa-solid fa-circle-info");
+  }
 });
-//}
