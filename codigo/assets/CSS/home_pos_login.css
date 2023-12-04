@@ -237,11 +237,6 @@ body
    align-self: flex-start;
    border-radius: 10px 10px 3px 10px;
 }
-.container.colapsar{
-   height: 60px;
-   width: 150px;
-   display: flex;
-   align-items: center;
-   overflow: hidden;
- 
+.map{
+    position: static;
 }
