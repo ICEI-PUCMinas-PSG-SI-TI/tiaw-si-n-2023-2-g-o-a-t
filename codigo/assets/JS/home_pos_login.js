@@ -1,7 +1,8 @@
 /************************* Recuperando os dados das partidas *************************/
 const urlPartidas =
-  "https://jsonserver-partidas.nayarissonnatan.repl.co/partidas";
+  "https://jsonserver-partidas-1.nayarissonnatan.repl.co/partidas";
 var partidas = [];
+
 
 function LeDadosJSONServer() {
   fetch(urlPartidas)
@@ -11,8 +12,70 @@ function LeDadosJSONServer() {
     .then((data) => {
       partidas = data;
       console.log("dados carregados!" + partidas[1].Criador);
+      for (let partida = 0; partida < partidas.length; partida++) {
+        const element = partidas[partida];
+        const newCard = createCard({criador: element.Criador, jogadores: element.Jogadores})
+        const cardContainer = document.getElementById('linha-cards');
+        cardContainer.appendChild(newCard);
+      }
+      
     });
 }
+LeDadosJSONServer()
+
+
+
+function createCard(info) {
+  
+  const cardDiv = document.createElement('div');
+  cardDiv.classList.add('card-participar', 'col-sm-6', 'col-md-4', 'col-lg-3');
+
+  const card = document.createElement('div');
+  card.classList.add('card');
+
+  const img = document.createElement('img');
+  img.src = '/codigo/assets/images/images (1).jpg';
+  img.classList.add('card-img-top');
+  img.alt = '...';
+
+  const cardBody = document.createElement('div');
+  cardBody.classList.add('card-body', 'd-flex', 'flex-column', 'h-100');
+
+  const createdBy = document.createElement('p');
+  createdBy.classList.add('card-title', 'mb-0');
+  createdBy.textContent = 'Criado por: ' + info.criador;
+
+  const players = document.createElement('p');
+  players.classList.add('card-text', 'mb-0');
+  players.textContent = info.jogadores + ' jogadores.';
+
+  const divFlexEnd = document.createElement('div');
+  divFlexEnd.classList.add('mt-auto', 'd-flex', 'justify-content-end');
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.classList.add('openPopupButton', 'btn', 'btn-light', 'ms-auto');
+  button.textContent = 'Mais';
+  button.dataset.bsToggle = 'modal';
+  button.dataset.bsTarget = '#exampleModal';
+
+  divFlexEnd.appendChild(button);
+  cardBody.appendChild(createdBy);
+  cardBody.appendChild(players);
+  cardBody.appendChild(divFlexEnd);
+
+  card.appendChild(img);
+  card.appendChild(cardBody);
+
+  cardDiv.appendChild(card);
+
+  return cardDiv;
+
+}
+const newCard = createCard({criador: "Lionel Messi", jogadores: "Somente o ET"});
+const cardContainer = document.getElementById('linha-cards');
+cardContainer.appendChild(newCard);
+
 
 //.then (function(dados) {
 //
