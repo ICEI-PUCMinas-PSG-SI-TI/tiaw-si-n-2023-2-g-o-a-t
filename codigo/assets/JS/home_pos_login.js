@@ -9,14 +9,6 @@ async function LeDadosPartidas() {
   const partidasJson = await req.json()
 
   partidas = partidasJson;
-  // fetch(urlPartidas)
-  //   .then(function (response) {
-  //     return response.json();
-  //   })
-  //   .then((data) => {
-  //     partidas = data;
-  //     console.log("dados carregados!" + partidas[1].Criador);
-  //   });
 
 }
 LeDadosPartidas()
