@@ -27,16 +27,21 @@ body {
 .profile{
     color: #fff;
     text-decoration: none;
-    align-items: end;
 }
 .collapse #profile-icone{
     align-items: flex-end;
+    margin-left: 50%;
 }
 .text-center p
 {
     color: white;
 }
 
+@media only screen and (min-width: 992px) {
+     .profile{
+        margin-left: 80%;
+    }
+  }
 
 /* Conteúdo */
 #linha-cards{
