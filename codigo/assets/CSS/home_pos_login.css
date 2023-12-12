@@ -44,7 +44,7 @@ body {
   }
 
 /* Conteúdo */
-#linha-cards{
+#container-cards{
     margin: 2% 1% 2% 1%;   
     padding-left: 12%;
     padding-right: 12%;

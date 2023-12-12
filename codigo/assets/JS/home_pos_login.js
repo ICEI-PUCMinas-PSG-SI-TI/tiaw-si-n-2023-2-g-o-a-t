@@ -260,3 +260,7 @@ alertTrigger.addEventListener("click", async () => {
     appendAlert(mensagemFalha, "primary", "fa-solid fa-circle-info");
   }
 });
+
+
+/************************* Criando os cards na home *************************/
+
