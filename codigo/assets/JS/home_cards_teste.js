@@ -10,7 +10,7 @@ function renderizarCards(partidas) {
           <p class="card-text">Jogadores: ${partidas.lotacao}/${partidas.Jogadores}</p>
           <p class="card-text">Local: ${partidas.localizacao}</p>
           <div class="mt-auto d-flex justify-content-end">
-            <button type="button" class="openPopupButton btn btn-light ms-auto" id="4" data-bs-toggle="modal"
+            <button type="button" class="openPopupButton btn btn-light ms-auto" id="${partidas.id}" data-bs-toggle="modal"
               data-bs-target="#exampleModal">Mais</button>
           </div>
         </div>
