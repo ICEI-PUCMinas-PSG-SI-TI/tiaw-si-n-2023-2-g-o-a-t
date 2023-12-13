@@ -29,7 +29,7 @@ async function carregarPagina() {
     
     const partidas = await api.get("partidas");
     renderizarCards(partidas);
-  
+    
     //fecharCarregamento();
   }
   
