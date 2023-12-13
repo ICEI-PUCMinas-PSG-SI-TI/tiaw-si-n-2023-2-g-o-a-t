@@ -12,7 +12,6 @@ body {
     background-repeat: no-repeat;
     */
 }
-
 /* Navbar */
 .container-fluid
 {
@@ -27,6 +26,7 @@ body {
 .profile{
     color: #fff;
     text-decoration: none;
+    align-items: end;
 }
 .collapse #profile-icone{
     align-items: flex-end;
@@ -44,7 +44,7 @@ body {
   }
 
 /* Conteúdo */
-#container-cards{
+#linha-cards{
     margin: 2% 1% 2% 1%;   
     padding-left: 12%;
     padding-right: 12%;
@@ -58,14 +58,12 @@ body {
 {
     margin: 0 auto 2px auto;
 }
-
 /* Estilos personalizados para o modal */
 div .modal-header h1
 {
   width: 100%;
   text-align: center;
 }
-
 .pop-paragrafos
 {
   margin-bottom: 1%;
@@ -79,13 +77,10 @@ div .modal-header h1
   border-radius: 20px 20px 20px 20px;
   padding: 2%;
   background-color: rgb(237, 236, 236);
-
 }
 .modal-dialog{
     width: 100%;
 }
-
-
 /* fazendo o elemento de notificação ficar na posição específica da tela  */
 #liveAlertPlaceholder {
     position: fixed;
@@ -94,14 +89,12 @@ div .modal-header h1
     margin-top: 1.8%;
     z-index: 2;
 }
-
 /* Configurando o alerta*/
 .alert
 {
     width: max-content;
     margin-left: auto;
 }
-
 /* Footer */
 footer {
     background-color: #022f21;
@@ -114,7 +107,6 @@ footer {
     color: inherit;
     margin-right: 15px;
     color: #fff;
-
 }
 .text-center p {
     font-family: Arial, Helvetica, sans-serif,bold;
@@ -130,124 +122,3 @@ footer {
     background-color: #022f21;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400&family=Vina+Sans&display=swap');
-*{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: 'Lato', sans-serif;
-   
-}
-
-body
-{
-   background-color: blue;
-}
-
-.container{
-   --light-color:#fff;
-   height: 420px;
-   width: 320px;
-   background-color:var(--light-color);
-   position: fixed;
-   bottom: 50px;
-   right: 10px ;
-   box-shadow: 0px 0px 15px 0px black;
-}
-.chat-header{
-   height: 60px;
-   display: flex; 
-   align-items: center ;
-   padding: 0px 30px;
-   background-color: rgb(0, 255, 128);
-   color: var(--light-color);
-   font-size: 1.5rem;
-   cursor: pointer;
-}
-.chat-header .logo{
-   height: 35px;
-   width: 35px;
-   box-shadow: 0px 0px 10px 0px black;
-}
-.chat-header img{
-   height: 100%;
-   width: 100%;
-   
-}
-.chat-header title{
-   padding-left: 15px;
-}
-.chat-body{
-   height: 300px;
-   padding: 8px 10px;
-   overflow-y: auto;
-   
-}
-.chat-input{
-   height: 60px;
-   display: flex;
-   align-items: center;
-   border-top: 1px solid #ccc  ;
-
-   
-}
-.input-sec{
-   flex:9
-}
-.send{
-   flex: 1;
-   padding-right: 4px;
-}
-.send img{
-   width: 100%;
-   height: auto;
-}
-#txtInput{
-   line-height: 30px;
-   padding: 8px 10px;
-   border: none;
-   outline: none;
-   caret-color: black;
-   font-size: 1rem;
-   width: 100%;
-}
-.material-symbols-outlined {
-   flex: 1;
-   padding-left: 4px;
- font-variation-settings:
- 'FILL' 0,
- 'wght' 400,
- 'GRAD' 0,
- 'opsz' 24
-
-}
-.user-message,
-.chatbot-message{
-   padding: 8px;
-   background-color: #ccc;
-   margin: 5px;
-   width: max-content;
-   border-radius: 10px 3px 10px 10px;
-   align-self: flex-end !important; 
-   text-align: right;
-}
-.logo{
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
-}
-.chatbot-message {
-   background-color: green;
-   color: var(--light-color);
-   align-self: flex-start;
-   border-radius: 10px 10px 3px 10px;
-}
-/*
-.container.colapsar{
-   height: 60px;
-   width: 150px;
-   display: flex;
-   align-items: center;
-   overflow: hidden;
- 
-} */

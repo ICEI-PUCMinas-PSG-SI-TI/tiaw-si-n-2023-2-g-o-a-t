@@ -4,9 +4,9 @@ urlPartidas ="https://jsonserver-partidas-1.nayarissonnatan.repl.co/partidas";
 
 var partidas = [];
 
-async function LeDadosPartidas() {
+async function LeDadosPartidas(){
 
-  const req = await fetch("https://jsonserver-partidas-1.nayarissonnatan.repl.co/partidas")
+  const req = await fetch(urlPartidas)
   const partidasJson = await req.json()
 
   partidas = partidasJson;
@@ -145,41 +145,12 @@ var openPopupButtons = document.getElementsByClassName("openPopupButton");
 var elementId;
 
 // ouvinte de eventos a cada botão "mais"
-Array.from(openPopupButtons).forEach(function (button) {
-  button.addEventListener("click", function () {
-    // Obtém o id do elemento clicado
-    elementId = button.id;
 
-    ValidaInfoID();
-  });
-});
 
-// Obtendo referências para os parágrafos
-var pCriador = document.getElementById("p-criador");
-var pEsporte = document.getElementById("p-esporte");
-var pData = document.getElementById("p-data");
-var pHorario = document.getElementById("p-horario");
-var pJogadores = document.getElementById("p-jogadores");
-var pCategoria = document.getElementById("p-categoria");
-var pObrigatorio = document.getElementById("p-obrigatorio");
 
 
 //função que busca nos dados estruturados a respectiva partida que o usuário deseja
-function ValidaInfoID() {
-  let procura = partidas.length;
-  for (let i = 0; i < procura; i++) {
-    if (partidas[i].id == elementId) {
-      pCriador.textContent = "Criador: " + partidas[i].Criador;
-      pEsporte.textContent = "Esporte: " + partidas[i].Esporte;
-      pData.textContent = "Data: " + partidas[i].Data;
-      pHorario.textContent = "Horário: " + partidas[i].Horario;
-      pJogadores.textContent = "Jogadores: " + partidas[i].Jogadores;
-      pCategoria.textContent = "Categoria: " + partidas[i].Categoria;
-      pObrigatorio.textContent = "Obrigatório: " + partidas[i].Obrigatorio;
-      procura = i;
-    }
-  }
-}
+
 
 //descobrindo quem está acessando o site para guardar as partidas que ele está participando no JSONServer
 var objdado = "";
@@ -200,6 +171,7 @@ LeLocalStorage();
 
 //descobrindo o id de usuário pelo seu email
 var NovoParticipando; 
+
 async function ProcuraIdUsuario() {
   await LeDadosUsuarios();
   let procura = usuarios.length;
@@ -226,10 +198,8 @@ async function ProcuraIdUsuario() {
 
 //código para abrir as notificações de êxito
 
-var alertPlaceholder;
-alertPlaceholder = document.getElementById("liveAlertPlaceholder");
-var appendAlert;
-appendAlert =  (message, type, icon) => {
+var alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+var appendAlert =  (message, type, icon) => {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = [
     `<div class="alert alert-${type} alert-dismissible mb-1" role="alert" id="notificacao">`,
@@ -242,15 +212,11 @@ appendAlert =  (message, type, icon) => {
 }
 
 //função para inserir a mensagem e o tipo de alerta que será exibido
-var alertTrigger; 
-alertTrigger = document.getElementById("participar");
-var notificacao;
-notificacao = document.getElementById("notificacao");
+var alertTrigger = document.getElementById("participar");
+var notificacao = document.getElementById("notificacao");
 
-var mensagemExito =
-  "<strong>Legal, agora você está participando da partida!</strong>";
-
-var mensagemFalha = "<strong>Ops, parece que a partida já está cheia!</strong>";;
+var mensagemExito =  "<strong>Legal, agora você está participando da partida!</strong>";
+var mensagemFalha = "<strong>Ops, parece que a partida já está cheia!</strong>";
 
 alertTrigger.addEventListener("click", async () => {
   await ProcuraIdUsuario();
