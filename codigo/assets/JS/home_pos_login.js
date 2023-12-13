@@ -1,11 +1,12 @@
 /************************* Métodos os dados das partidas *************************/
-const urlPartidas =
-  "https://jsonserver-partidas-1.nayarissonnatan.repl.co/partidas";
+var  urlPartidas;
+urlPartidas ="https://jsonserver-partidas-1.nayarissonnatan.repl.co/partidas";
+
 var partidas = [];
 
 async function LeDadosPartidas() {
 
-  const req = await fetch(urlPartidas)
+  const req = await fetch("https://jsonserver-partidas-1.nayarissonnatan.repl.co/partidas")
   const partidasJson = await req.json()
 
   partidas = partidasJson;
@@ -14,7 +15,8 @@ async function LeDadosPartidas() {
 LeDadosPartidas()
 
 //Obtendo os usuários cadastrados no site pelo JSONServer
-const urlUsuarios = "https://jsonserver-partidas-1.nayarissonnatan.repl.co/usuarios";
+var urlUsuarios;
+urlUsuarios =  "https://jsonserver-partidas-1.nayarissonnatan.repl.co/usuarios";
 var usuarios = [];
 
 async function LeDadosUsuarios() {
@@ -224,8 +226,10 @@ async function ProcuraIdUsuario() {
 
 //código para abrir as notificações de êxito
 
-const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
-const appendAlert = (message, type, icon) => {
+var alertPlaceholder;
+alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+var appendAlert;
+appendAlert =  (message, type, icon) => {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = [
     `<div class="alert alert-${type} alert-dismissible mb-1" role="alert" id="notificacao">`,
@@ -238,13 +242,15 @@ const appendAlert = (message, type, icon) => {
 }
 
 //função para inserir a mensagem e o tipo de alerta que será exibido
-const alertTrigger = document.getElementById("participar");
-const notificacao = document.getElementById("notificacao");
+var alertTrigger; 
+alertTrigger = document.getElementById("participar");
+var notificacao;
+notificacao = document.getElementById("notificacao");
 
-let mensagemExito =
+var mensagemExito =
   "<strong>Legal, agora você está participando da partida!</strong>";
 
-let mensagemFalha = "<strong>Ops, parece que a partida já está cheia!</strong>";;
+var mensagemFalha = "<strong>Ops, parece que a partida já está cheia!</strong>";;
 
 alertTrigger.addEventListener("click", async () => {
   await ProcuraIdUsuario();
@@ -263,4 +269,58 @@ alertTrigger.addEventListener("click", async () => {
 
 
 /************************* Criando os cards na home *************************/
+/*
+function LeDadosJSONServer() {
+  fetch(urlPartidas)
+    .then(function (response) {
+      return response.json();
+    })
+    .then((data) => {
+      partidas = data;
+      console.log("dados carregados!" + partidas[1].Criador);
+      for (let partida = 0; partida < partidas.length; partida++) {
+        const element = partidas[partida];
+        const newCard = createCard({criador: element.Criador, jogadores: element.Jogadores})
+        const cardContainer = document.getElementById('linha-cards');
+        cardContainer.appendChild(newCard);
+      }
+    });
+}
+LeDadosJSONServer()
+
+function createCard(info) {
+  const cardDiv = document.createElement('div');
+  cardDiv.classList.add('card-participar', 'col-sm-6', 'col-md-4', 'col-lg-3');
+  const card = document.createElement('div');
+  card.classList.add('card');
+  const img = document.createElement('img');
+  img.src = '/codigo/assets/images/Quadracard.jpg';
+  img.classList.add('card-img-top');
+  img.alt = '...';
+  const cardBody = document.createElement('div');
+  cardBody.classList.add('card-body', 'd-flex', 'flex-column', 'h-100');
+  const createdBy = document.createElement('p');
+  createdBy.classList.add('card-title', 'mb-0');
+  createdBy.textContent = 'Criado por: ' + info.criador;
+  const players = document.createElement('p');
+  players.classList.add('card-text', 'mb-0');
+  players.textContent = info.jogadores + ' jogadores.';
+  const divFlexEnd = document.createElement('div');
+  divFlexEnd.classList.add('mt-auto', 'd-flex', 'justify-content-end');
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.classList.add('openPopupButton', 'btn', 'btn-light', 'ms-auto');
+  button.textContent = 'Mais';
+  button.dataset.bsToggle = 'modal';
+  button.dataset.bsTarget = '#exampleModal';
+  divFlexEnd.appendChild(button);
+  cardBody.appendChild(createdBy);
+  cardBody.appendChild(players);
+  cardBody.appendChild(divFlexEnd);
+  card.appendChild(img);
+  card.appendChild(cardBody);
+  cardDiv.appendChild(card);
+  return cardDiv;
+}
+*/
 
