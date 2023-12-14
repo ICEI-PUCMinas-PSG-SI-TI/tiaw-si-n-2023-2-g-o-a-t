@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/codigo/assets/CSS/tela_login.css">
+<title>Login GOAT</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h1><strong>GOAT</strong></h1>
+            <p><strong>Seja bem-vindo(a)!</strong></p>
+            <form id="loginForm">
+                <input type="email" id="email" name="email" placeholder="email">
+                <input type="password" id="senha" name="senha" placeholder="senha">
+                <button type="button" onclick="login()">Login</button>
+                <p>Ainda não é cadastrado? <a href="/cadastro.html">Cadastre-se</a></p>
+            </form>
+        </div>
+        <div class="image-container">
+            <img src="/codigo/assets/images/Jogadores.png">
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+
+            // Validação do campo "Email" e "Senha"
+            if (email === "" || senha === "") {
+                alert("Preencha todos os campos.");
+                return;
+            }
+
+            var usuario = {
+                email: email,
+                senha: senha
+            };
+
+            var jsonUsuario = JSON.stringify(usuario);
+            console.log(jsonUsuario);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Arial', sans-serif;
+        background-color: #f2f2f2;
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        padding-left: 2%;
+    }
+
+    .login-container {
+        width: 25%;
+        padding: 2em;
+        text-align: center;
+        background-color: #f2f2f2;
+        transform: translateY(-100px);
+        z-index: 2;
+    }
+
+    h1 {
+        color: green;
+        font-size: 105px;
+    }
+
+
+
+    form {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    input,
+    button {
+        width: calc(100% - 20px);
+        padding: 15px;
+        margin-bottom: 1em;
+    }
+
+    input {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+        border: none;
+        border-radius: 8px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+        background-color: #333;
+    }
+
+    .image-container{
+        position: fixed;
+        left: 28%;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .image-container,
+        .login-container {
+            width: 100%;
+            padding-left: 0;
+        }
+    }

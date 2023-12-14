@@ -147,7 +147,7 @@
                             </div>
                             <div class="col-50 pt-3">
                                 <span>Já é cadastrado?</span>
-                                <button class="w-100 btn btn-dark mt-3">Realizar login</button>
+                                <button class="w-100 btn btn-dark mt-3" onclick="redirecionarParaLogin()">Realizar login</button>
                             </div>
                         </div>
                     </div>
@@ -180,6 +180,9 @@
     </div>
 
     <script>
+        function redirecionarParaLogin() {
+        window.location.href = "login.html";
+    }
         function cadastrarUsuario() {
             var nomeUser = document.getElementById("nomeUser").value;
             var dataNasc = document.getElementById("dataNasc").value;
