@@ -11,6 +11,8 @@ submeterLogin.addEventListener("click", () =>
     }
     }
     salvaDados(usuarioAtual)
+    login();
+
 
 });
 
@@ -27,12 +29,9 @@ function login() {
         alert("Preencha todos os campos.");
         return;
     }
-
-    var usuario = {
-        email: email,
-        senha: senha
-    };
-
-    var jsonUsuario = JSON.stringify(usuario);
-    console.log(jsonUsuario);
+    else
+    {
+        window.location.href = "home_pos_login.html";
+    }
 }
+

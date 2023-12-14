@@ -153,44 +153,13 @@ var elementId;
 
 
 //descobrindo quem está acessando o site para guardar as partidas que ele está participando no JSONServer
-var objdado = "";
-function LeLocalStorage(){
-  let strdado = localStorage.getItem('db');
 
-  if(strdado){
-  objdado = strdado;
-  }
-  else{
-    //teste, retirar esse valor para objdado depois 
-    objdado = "admin@abc.com";
-    //console.log("o dado padrão para teste foi carregado " + objdado.usuario[0].email)
-  }
-  return objdado;
-}
-LeLocalStorage();
+
 
 //descobrindo o id de usuário pelo seu email
-var NovoParticipando; 
 
-async function ProcuraIdUsuario() {
-  await LeDadosUsuarios();
-  let procura = usuarios.length;
-  let usuarioEncontrado = false;
-  for (let i = 0; i < procura; i++) {
 
-    if (usuarios[i].email == objdado) {
-      console.log("usuário encontrado, id: " + usuarios[i].id);
-      usuarioEncontrado = true;
-      NovoParticipando = usuarios[i].id;
-    }
-  }
 
-  if(!usuarioEncontrado) {
-    console.log("Usuário não encontrado");
-  }
-
-  return NovoParticipando;
-}
 /*********************************** Programando o botão de participar ***********************************/
 
 
@@ -215,78 +184,8 @@ var appendAlert =  (message, type, icon) => {
 var alertTrigger = document.getElementById("participar");
 var notificacao = document.getElementById("notificacao");
 
-var mensagemExito =  "<strong>Legal, agora você está participando da partida!</strong>";
-var mensagemFalha = "<strong>Ops, parece que a partida já está cheia!</strong>";
-
-alertTrigger.addEventListener("click", async () => {
-  await ProcuraIdUsuario();
-  await AtualizaPartidasUsuario(NovoParticipando, elementId);
-  
-  if(ComEspaco)
-  {
-    AtualizaLotacao(elementId);
-    appendAlert(mensagemExito, "success", "fa-sharp fa-solid fa-circle-check");
-  }
-  else
-  {
-    appendAlert(mensagemFalha, "primary", "fa-solid fa-circle-info");
-  }
-});
 
 
-/************************* Criando os cards na home *************************/
-/*
-function LeDadosJSONServer() {
-  fetch(urlPartidas)
-    .then(function (response) {
-      return response.json();
-    })
-    .then((data) => {
-      partidas = data;
-      console.log("dados carregados!" + partidas[1].Criador);
-      for (let partida = 0; partida < partidas.length; partida++) {
-        const element = partidas[partida];
-        const newCard = createCard({criador: element.Criador, jogadores: element.Jogadores})
-        const cardContainer = document.getElementById('linha-cards');
-        cardContainer.appendChild(newCard);
-      }
-    });
-}
-LeDadosJSONServer()
 
-function createCard(info) {
-  const cardDiv = document.createElement('div');
-  cardDiv.classList.add('card-participar', 'col-sm-6', 'col-md-4', 'col-lg-3');
-  const card = document.createElement('div');
-  card.classList.add('card');
-  const img = document.createElement('img');
-  img.src = '/codigo/assets/images/Quadracard.jpg';
-  img.classList.add('card-img-top');
-  img.alt = '...';
-  const cardBody = document.createElement('div');
-  cardBody.classList.add('card-body', 'd-flex', 'flex-column', 'h-100');
-  const createdBy = document.createElement('p');
-  createdBy.classList.add('card-title', 'mb-0');
-  createdBy.textContent = 'Criado por: ' + info.criador;
-  const players = document.createElement('p');
-  players.classList.add('card-text', 'mb-0');
-  players.textContent = info.jogadores + ' jogadores.';
-  const divFlexEnd = document.createElement('div');
-  divFlexEnd.classList.add('mt-auto', 'd-flex', 'justify-content-end');
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.classList.add('openPopupButton', 'btn', 'btn-light', 'ms-auto');
-  button.textContent = 'Mais';
-  button.dataset.bsToggle = 'modal';
-  button.dataset.bsTarget = '#exampleModal';
-  divFlexEnd.appendChild(button);
-  cardBody.appendChild(createdBy);
-  cardBody.appendChild(players);
-  cardBody.appendChild(divFlexEnd);
-  card.appendChild(img);
-  card.appendChild(cardBody);
-  cardDiv.appendChild(card);
-  return cardDiv;
-}
-*/
+
 

@@ -95,6 +95,21 @@ div .modal-header h1
     width: max-content;
     margin-left: auto;
 }
+
+/* Footer */
+.carregamento {
+    position: fixed;
+    backdrop-filter: blur(3px);
+    background-color: #0000009d;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
 /* Footer */
 footer {
     background-color: #022f21;

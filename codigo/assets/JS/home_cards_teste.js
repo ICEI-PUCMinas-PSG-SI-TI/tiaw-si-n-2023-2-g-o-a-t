@@ -65,9 +65,77 @@ var pObrigatorio = document.getElementById("p-obrigatorio");
 }
 
 
+function LeLocalStorage(){
+  var objdado = "";
+  let strdado = localStorage.getItem('db');
+
+  if(strdado){
+  objdado = JSON.parse(strdado);
+  }
+  else{
+    //teste, retirar esse valor para objdado depois 
+    objdado =  { usuarioAtual: [ 
+                  {email: "admin@abc.com"} 
+  ]};
+  console.log("o dado padrão para teste foi carregado " + objdado.usuarioAtual[0].email)
+  }
+  return objdado;
+}
+
+
+async function ProcuraIdUsuario() {
+  var NovoParticipante; 
+
+  let objdado = await LeLocalStorage();
+
+  console.log(objdado)
+
+  LeDadosUsuarios();
+  
+  let procura = usuarios.length;
+  let usuarioEncontrado = false;
+  for (let i = 0; i < procura; i++) {
+
+    if (usuarios[i].email == objdado.email) {
+      console.log("usuário encontrado, id: " + usuarios[i].id);
+      usuarioEncontrado = true;
+      NovoParticipante = usuarios[i].id;
+    }
+  }
+
+  if(!usuarioEncontrado) {
+    console.log("Usuário não encontrado");
+  }
+
+  return NovoParticipante;
+}
+
+function ClicarParticipar(){ 
+  
+  alertTrigger.addEventListener("click", async () => {
+    
+  let NovoParticipante = await ProcuraIdUsuario();
+  
+  abrirCarregamento();
+  await AtualizaPartidasUsuario(NovoParticipante, elementId);
+  fecharCarregamento();
+  var mensagemExito =  "<strong>Legal, agora você está participando da partida!</strong>";
+  var mensagemFalha = "<strong>Ops, parece que a partida já está cheia!</strong>";
+
+  if(ComEspaco)
+  {
+    AtualizaLotacao(elementId);
+    appendAlert(mensagemExito, "success", "fa-sharp fa-solid fa-circle-check");
+  }
+  else
+  {
+    appendAlert(mensagemFalha, "primary", "fa-solid fa-circle-info");
+  }
+});
+}
 
 async function carregarPagina() {
-  //abrirCarregamento();
+  abrirCarregamento();
 
   const partidas = await api.get("partidas");
   const usuarios = await api.get("usuarios");
@@ -75,7 +143,11 @@ async function carregarPagina() {
   renderizarCards(partidas);
   AbrirPopup();
 
-  //fecharCarregamento();
+  fecharCarregamento();
+
+  //clique em participar 
+  
+ClicarParticipar();
 }
 
 carregarPagina();
