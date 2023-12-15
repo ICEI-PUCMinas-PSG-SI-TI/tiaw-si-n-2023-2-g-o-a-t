@@ -74,13 +74,12 @@ function LeLocalStorage(){
   }
   else{
     //teste, retirar esse valor para objdado depois 
-    objdado =  { usuarioAtual: [ 
-                  {email: "admin@abc.com"} 
-  ]};
-  console.log("o dado padrão para teste foi carregado " + objdado.usuarioAtual[0].email)
-  }
+    console.log("Usuário não encontrado")   
+  };
+  
   return objdado;
 }
+  
 
 
 async function ProcuraIdUsuario() {
@@ -138,7 +137,7 @@ async function carregarPagina() {
   abrirCarregamento();
 
   const partidas = await api.get("partidas");
-  const usuarios = await api.get("usuarios");
+  // const usuarios = await api.get("usuarios");
 
   renderizarCards(partidas);
   AbrirPopup();
