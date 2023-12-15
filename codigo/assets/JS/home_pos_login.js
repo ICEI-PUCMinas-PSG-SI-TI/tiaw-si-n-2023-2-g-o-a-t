@@ -40,7 +40,7 @@ async function AtualizaLotacao(id) {
 
   var altera = {
     id: id,
-    Criador: partidas[id].criador,
+    Criador: partidas[id].Criador,
     Esporte: partidas[id].Esporte,
     Data: partidas[id].Data,
     Horario: partidas[id].Horario,

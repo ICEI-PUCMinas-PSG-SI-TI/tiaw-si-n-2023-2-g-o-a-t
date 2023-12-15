@@ -55,7 +55,7 @@ const renderMessageElement = (txt, type) => {
 
 }
 const getChatBotResponse = (Userinput) => {
-        return responseObj[Userinput] == undefined ? "Por facor tente novamente" : responseObj[Userinput]
+        return responseObj[Userinput] == undefined ? "Por favor tente novamente" : responseObj[Userinput]
 }
 
 const Minimize = () => {

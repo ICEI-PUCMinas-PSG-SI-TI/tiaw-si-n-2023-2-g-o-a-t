@@ -1,0 +1,57 @@
+  /* Footer */
+footer {
+  background-color: #022f21;
+  bottom: 0;
+  width: 100%;
+  padding-top: 1%;
+}
+.text-center a {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 15px;
+  color: #fff;
+}
+.text-center p {
+  font-family: Arial, Helvetica, sans-serif,bold;
+  margin-top:10px;
+}
+.bloco-faq{
+  max-width: 50%;
+  margin: 5px auto 5px auto;
+  
+}
+.accordion-item .accordion-button,.accordion-body{
+  color: #fff;
+  background-color: #022f21;
+}
+/* Navbar */
+.container-fluid
+{
+    width: 100%;
+}
+.container .navbar-brand > img{
+    width: 57px;
+}
+.navbar{
+    background-color: #14805E;
+}
+.profile{
+    color: #fff;
+    text-decoration: none;
+    align-items: end;
+}
+.collapse #profile-icone{
+    align-items: flex-end;
+    margin-left: 50%;
+}
+.text-center p
+{
+    color: white;
+}
+
+@media only screen and (min-width: 992px) {
+     .profile{
+        margin-left: 80%;
+    }
+  }
+

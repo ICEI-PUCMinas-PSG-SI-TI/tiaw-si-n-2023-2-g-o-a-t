@@ -11,7 +11,7 @@ function obterPartidasUsuario(userId) {
 
     if (usuario) {
         const partidasUsuario = [];
-        // percorrendo o veotr pra verificar se existe mais ids de usuarios //
+        // percorrendo o vetor pra verificar se existe mais ids de usuarios //
         for (let i = 0; i < usuario.partidas.length; i++) {
             const partidaId = usuario.partidas[i];
             const partida = partidas.find(partida => partida.id === partidaId);

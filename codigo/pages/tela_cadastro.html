@@ -142,7 +142,7 @@
                     <div class="col-4 centered-buttons">
                         <div class="row pt-5">
                             <div class="col-12">
-                                <button class="w-100 btn btn-dark mt-3" onclick="cadastrarUsuario()">Cadastrar</button>
+                                <button class="w-100 btn btn-dark mt-3" onclick="CR7( )"> Cadastrar</button>
                                 <div id="mensagemCadastro" class="text-success mt-3" style="display: none;">Usuário cadastrado!</div>
                             </div>
                             <div class="col-50 pt-3">
@@ -178,46 +178,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function redirecionarParaLogin() {
-        window.location.href = "login.html";
-    }
-        function cadastrarUsuario() {
-            var nomeUser = document.getElementById("nomeUser").value;
-            var dataNasc = document.getElementById("dataNasc").value;
-            var selGenero = document.getElementById("selGenero").value;
-            var user = document.getElementById("user").value;
-            var email = document.getElementById("email").value;
-            var senha = document.getElementById("senha").value;
-            var confirmaSenha = document.getElementById("confirmaSenha").value;
-
-            // Validação do campo "Nome do Usuário"
-            if (nomeUser === "" || dataNasc === "" || selGenero === "" || user === "" || email === "" || senha === "" || confirmaSenha === "") {
-                alert("Preencha todos os campos.");
-                return;
-            }
-
-          
-            if (senha !== confirmaSenha) {
-                alert("As senhas não coincidem. Por favor, digite a mesma senha nos campos de senha e confirmação de senha.");
-                return;
-            }
-
-            var usuario = {
-                nome: nomeUser,
-                dataNascimento: dataNasc,
-                genero: selGenero,
-                usuario: user,
-                email: email,
-                senha: senha
-            };
-
-            var jsonUsuario = JSON.stringify(usuario);
-            console.log(jsonUsuario);
-           
-             document.getElementById("mensagemCadastro").style.display = "block";
-        }
-    </script>
+ <script src="/codigo/assets/JS/tela.cadastro.js"></script>
 </body>
 </html>
