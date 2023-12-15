@@ -11,13 +11,12 @@ console.log(IdPartidasUsuario.length)
     <div class="card">
       <img src="/codigo/assets/images/Quadracard.jpg" class="card-img-top" alt="...">
       <div class="card-body d-flex flex-column">
-        <p class="card-title">Criado por: ${partidas[IdPartidasUsuario[i]].Criador}</p>
-        <p class="card-text">Local: ${partidas[IdPartidasUsuario[i]].Esporte}</p>
-        <p class="card-text">Local: ${partidas[IdPartidasUsuario[i]].Data}</p>
-        <p class="card-text">Local: ${partidas[IdPartidasUsuario[i]].Horario}</p>
-        <p class="card-text">Local: ${partidas[IdPartidasUsuario[i]].Categoria}</p>
+        <p class="card-title">Criador: ${partidas[IdPartidasUsuario[i]].Criador}</p>
+        <p class="card-text">Esporte: ${partidas[IdPartidasUsuario[i]].Esporte}</p>
+        <p class="card-text">Data: ${partidas[IdPartidasUsuario[i]].Data}</p>
+        <p class="card-text">Horário: ${partidas[IdPartidasUsuario[i]].Horario}</p>
         <p class="card-text">Jogadores: ${partidas[IdPartidasUsuario[i]].lotacao}/${partidas[IdPartidasUsuario[i]].Jogadores}</p>
-        <p class="card-text">Local: ${partidas[IdPartidasUsuario[i]].Obrigatorio}</p>
+        <p class="card-text">Obrigatório: ${partidas[IdPartidasUsuario[i]].Obrigatorio}</p>
         <p class="card-text">Local: ${partidas[IdPartidasUsuario[i]].localizacao}</p>
         <div class="mt-auto d-flex justify-content-end">
           <button type="button" class="openPopupButton btn btn-light ms-auto" id="${partidas[IdPartidasUsuario[i]].id}" data-bs-toggle="modal"
