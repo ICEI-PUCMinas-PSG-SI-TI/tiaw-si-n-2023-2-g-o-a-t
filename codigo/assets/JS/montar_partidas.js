@@ -1,34 +1,37 @@
-User
+var ultimoId = parseInt(localStorage.getItem('ultimoId')) || 0;
+
+var ultimoID = 0;
+
 function salvarDados() {
   // Captura os valores do formulário
+
+  ultimoID++
   
 }
 
 //document.querySelector('.btn-success').addEventListener('click', salvarDados);
 
 function Lewan() {
-  var nomePelada = document.querySelector('input[placeholder="Nome da pelada"]').value;
   var tipoQuadra = document.getElementById('inputGroupSelect02').value;
-  var valorPelada = document.querySelector('input[placeholder="Digite um valor"]').value;
   var numeroJogadores = document.querySelector('input[placeholder="Quantos jogadores?"]').value;
   var genero = document.getElementById('inputGroupSelect02').value;
   var equipamento = document.querySelector('input[placeholder="Digite um item"]').value;
-  var dataHora = document.querySelector('input[placeholder="Data & Hora"]')?.value;
+  var dataHora = document.getElementById('dataNasc').value;
+  var hora = document.getElementById('hora-cons').value;
   var cep = document.querySelector('input[placeholder="Digite seu CEP..."]').value;
   var rua = document.querySelector('input[placeholder="Digite sua Rua..."]').value;
   var numero = document.querySelector('input[placeholder="Digite seu numero..."]').value;
   var bairro = document.querySelector('input[placeholder="Digite seu Bairro..."]').value;
   var cidade = document.querySelector('input[placeholder="Digite sua Cidade..."]').value;
   var pais = document.querySelector('input[placeholder="Digite seu País..."]').value;
-  var Nome = document.querySelector('input[placeholder="Seu Nome..."]').value;
-  var nomeQuadra = document.querySelector('input[placeholder="nome da quadra..."]').value;
+  var criador = document.querySelector('input[placeholder="Criador..."]').value;
+ 
 
   // Verificar se algum campo obrigatório está vazio
   if (
-    nomePelada === '' ||
     tipoQuadra === '' ||
-    valorPelada === '' ||
     numeroJogadores === '' ||
+    hora === ''||
     genero === '' ||
     equipamento === '' ||
     dataHora === '' ||
@@ -38,8 +41,7 @@ function Lewan() {
     bairro === '' ||
     cidade === '' ||
     pais === '' ||
-    Nome === '' ||
-    nomeQuadra === ''
+    criador === '' 
     
   ) { 
     alert('Por favor, preencha todos os campos obrigatórios!');
@@ -47,13 +49,14 @@ function Lewan() {
     
   } else {
     var dadosPartida = {
-      nomePelada: nomePelada,
+      id: ultimoID,
+      criador: criador,
       tipoQuadra: tipoQuadra,
-      valorPelada: valorPelada,
       numeroJogadores: numeroJogadores,
       genero: genero,
       equipamento: equipamento,
       dataHora: dataHora,
+      hora: hora,
       localizacao: {
         cep: cep,
         rua: rua,
@@ -61,23 +64,26 @@ function Lewan() {
         bairro: bairro,
         cidade: cidade,
         pais: pais,
-        Nome: Nome,
-        nomeQuadra: nomeQuadra
+        
+        
       }
     };
 
     var dadosJSON = JSON.stringify({
-      Criador: dadosPartida.nomePelada,
+      id: dadosPartida.id,
+      Criador: dadosPartida.criador,
       Esporte: dadosPartida.tipoQuadra,
       Data: dadosPartida.dataHora,
-      Horario: "",
+      Horario: dadosPartida.hora,
       Jogadores: dadosPartida.numeroJogadores,
       Categoria: dadosPartida.genero,
       Obrigatorio: dadosPartida.equipamento,
-      lotacao: " "
+      lotacao: " 1 "
     });
 
     localStorage.setItem('dadosPartida', dadosJSON);
+    localStorage.setItem('ultimoID', ultimoID);
+
 
     alert('Dados da partida foram salvos no banco de dados com SUCESSO!');
   }
